@@ -1,4 +1,4 @@
-import { Client, Account } from 'aw-test';
+import { Client, Account } from 'appwrite';
 
 const client = new Client();
 
