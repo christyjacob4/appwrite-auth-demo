@@ -3,21 +3,17 @@
   import { goto } from '$app/navigation';
   import { Toast } from '$lib/Toast';
 
-  let loading = false;
   let email = '';
   let password = '';
-  let name = ''
+  let name = '';
 
   const signupWithEmail = async () => {
-    loading = true;
     try {
       await AppwriteService.createAccount(email, password, name);
       await AppwriteService.createEmailSession(email, password);
       goto('/');
     } catch (e: any) {
       Toast.error(e.message ? e.message : e);
-    } finally {
-      loading = false;
     }
   };
 </script>
@@ -121,39 +117,6 @@
       on:click|preventDefault={signupWithEmail}
       class="flex w-full py-4 text-white font-medium items-center justify-center space-x-3 rounded-md shadow-lg bg-background filter hover:brightness-90"
     >
-      {#if !loading}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"
-          />
-        </svg>
-      {:else}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 animate-spin text-white"
-          v-else-if="loading"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-          />
-        </svg>
-      {/if}
-
       <p>Sign Up</p>
     </button>
 
@@ -165,6 +128,8 @@
 
     <div class="cursor-pointer" on:click={() => goto('/loginPhone')}>Sign up with Phone?</div>
 
-    <div class="cursor-pointer text-sm" on:click={() => goto('/login')}>Already have an account? Login here</div>
+    <div class="cursor-pointer text-sm" on:click={() => goto('/login')}>
+      Already have an account? Login here
+    </div>
   </form>
 </div>

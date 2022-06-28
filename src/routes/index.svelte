@@ -28,7 +28,7 @@
     } catch (e: any) {
       Toast.error(e.message ? e.message : e);
     } finally {
-      codeSent = false
+      codeSent = false;
     }
   };
 
@@ -38,7 +38,7 @@
         throw new Error('Phone number is required');
       }
       await AppwriteService.createPhoneVerification();
-      codeSent = true
+      codeSent = true;
     } catch (e: any) {
       Toast.error(e.message ? e.message : e);
     }
@@ -49,7 +49,7 @@
       await AppwriteService.updatePhoneVerification(user['$id'], secret);
       user = await AppwriteService.getAccount();
       Toast.success('Phone number verified!');
-      codeSent = false
+      codeSent = false;
     } catch (e: any) {
       Toast.error(e.message ? e.message : e);
     }
@@ -174,15 +174,15 @@
     </div>
 
     {#if !user.phoneVerification && codeSent}
-    <div class="flex flex-col space-y-2 w-full">
-      <label class="block text-md font-medium" for="secret">Verification Code</label>
-      <div class="flex space-x-4">
-        <input
-          name="secret"
-          type="secret"
-          bind:value={secret}
-          required
-          class="
+      <div class="flex flex-col space-y-2 w-full">
+        <label class="block text-md font-medium" for="secret">Verification Code</label>
+        <div class="flex space-x-4">
+          <input
+            name="secret"
+            type="secret"
+            bind:value={secret}
+            required
+            class="
             focus:ring-accent
             focus:border-accent
             block
@@ -194,25 +194,25 @@
             py-3
             px-3
           "
-          placeholder="Enter your verification code"
-        />
-        <button
-          on:click|preventDefault={verifyPhone}
-          class="text-white font-medium rounded-md shadow-lg bg-background filter hover:brightness-90 px-6"
-        >
-          Verify
-        </button>
+            placeholder="Enter your verification code"
+          />
+          <button
+            on:click|preventDefault={verifyPhone}
+            class="text-white font-medium rounded-md shadow-lg bg-background filter hover:brightness-90 px-6"
+          >
+            Verify
+          </button>
+        </div>
       </div>
-    </div>
     {/if}
 
     {#if !codeSent && !user.phoneVerification}
-    <button
-      on:click|preventDefault={createVerfication}
-      class="flex w-full py-4 text-white font-medium items-center justify-center space-x-3 rounded-md shadow-lg bg-background filter hover:brightness-90"
-    >
-      Verify Phone
-    </button>
+      <button
+        on:click|preventDefault={createVerfication}
+        class="flex w-full py-4 text-white font-medium items-center justify-center space-x-3 rounded-md shadow-lg bg-background filter hover:brightness-90"
+      >
+        Verify Phone
+      </button>
     {/if}
 
     <button
