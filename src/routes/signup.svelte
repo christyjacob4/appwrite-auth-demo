@@ -21,17 +21,17 @@
 <div class="w-screen h-screen bg-background items-center justify-center flex">
   <form
     class="
-				flex flex-col
-				bg-white
-				p-10
-				rounded-xl
-				shadow-2xl
-				items-center
-				space-y-8
-				max-w-lg
-				text-lg
-				text-gray-700
-			"
+      flex flex-col
+      bg-white
+      p-10
+      rounded-xl
+      shadow-2xl
+      items-center
+      space-y-8
+      max-w-lg
+      text-lg
+      text-gray-700
+    "
   >
     <img
       src="https://avatars.githubusercontent.com/u/25003669?s=300"
@@ -52,17 +52,17 @@
         bind:value={name}
         required
         class="
-						focus:ring-accent
-						focus:border-accent
-						block
-						w-full
-						rounded-md
-						sm:text-sm
-						border
-						border-gray-300
-						py-3
-						px-3
-					"
+          focus:ring-accent
+          focus:border-accent
+          block
+          w-full
+          rounded-md
+          sm:text-sm
+          border
+          border-gray-300
+          py-3
+          px-3
+        "
         placeholder="Enter your name"
       />
     </div>
@@ -75,17 +75,17 @@
         bind:value={email}
         required
         class="
-						focus:ring-accent
-						focus:border-accent
-						block
-						w-full
-						rounded-md
-						sm:text-sm
-						border
-						border-gray-300
-						py-3
-						px-3
-					"
+          focus:ring-accent
+          focus:border-accent
+          block
+          w-full
+          rounded-md
+          sm:text-sm
+          border
+          border-gray-300
+          py-3
+          px-3
+        "
         placeholder="Enter your email"
       />
     </div>
@@ -98,17 +98,17 @@
         bind:value={password}
         required
         class="
-						focus:ring-accent
-						focus:border-accent
-						block
-						w-full
-						rounded-md
-						sm:text-sm
-						border
-						border-gray-300
-						py-3
-						px-3
-					"
+          focus:ring-accent
+          focus:border-accent
+          block
+          w-full
+          rounded-md
+          sm:text-sm
+          border
+          border-gray-300
+          py-3
+          px-3
+        "
         placeholder="Enter your Password"
       />
     </div>

@@ -120,17 +120,17 @@
         bind:value={user.email}
         disabled
         class="
-              focus:ring-accent
-              focus:border-accent
-              block
-              w-full
-              rounded-md
-              sm:text-sm
-              border
-              border-gray-300
-              py-3
-              px-3
-          "
+            focus:ring-accent
+            focus:border-accent
+            block
+            w-full
+            rounded-md
+            sm:text-sm
+            border
+            border-gray-300
+            py-3
+            px-3
+        "
         placeholder="Enter your email"
       />
     </div>
@@ -151,17 +151,17 @@
           bind:value={user.phone}
           required
           class="
-            focus:ring-accent
-            focus:border-accent
-            block
-            w-full
-            rounded-md
-            sm:text-sm
-            border
-            border-gray-300
-            py-3
-            px-3
-        "
+              focus:ring-accent
+              focus:border-accent
+              block
+              w-full
+              rounded-md
+              sm:text-sm
+              border
+              border-gray-300
+              py-3
+              px-3
+          "
           placeholder="Enter your Phone Number"
         />
         <button
@@ -183,17 +183,17 @@
             bind:value={secret}
             required
             class="
-            focus:ring-accent
-            focus:border-accent
-            block
-            w-full
-            rounded-md
-            sm:text-sm
-            border
-            border-gray-300
-            py-3
-            px-3
-          "
+              focus:ring-accent
+              focus:border-accent
+              block
+              w-full
+              rounded-md
+              sm:text-sm
+              border
+              border-gray-300
+              py-3
+              px-3
+            "
             placeholder="Enter your verification code"
           />
           <button
